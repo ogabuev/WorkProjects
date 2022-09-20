@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+}

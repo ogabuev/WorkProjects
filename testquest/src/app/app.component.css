@@ -1,0 +1,65 @@
+
+* {
+  font-family: Arial;
+  font-size: 14px;
+}
+
+.modal {
+  width: 700px;
+  background: #f5f7f8;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.inmodal {
+  padding: 15px;
+  justify-content: flex-end;
+}
+
+.inputstyle {
+  width: 70%;
+  height: 30px;
+  border-radius: 5px;
+  border-width: 1px;
+  float: right;
+
+}
+
+input.ng-invalid{border-color: red;}
+select.ng-invalid{border-color: red;}
+
+input.ng-invalid.invalid_input{color:blue;}
+
+
+.invalid_input {
+  color: red;
+}
+.form_radio_btn {
+  display: block;
+}
+
+.form_radio_btn label {
+  margin-right: 10px;
+}
+
+.form_radio_btn input[type=radio] {
+  display: none;
+}
+
+.form_radio_btn input[type=radio]:checked + label {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+button {
+  padding: 7px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 10px;
+}
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+<div >
+
+
+  <div class="modal">
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+      <div class="inmodal">
+        <label>Наименование</label><label class="invalid_input" [hidden]="!myForm.controls['longTrip'].value">*</label>
+        <input type="text"  class="inputstyle" formControlName="routeName" >
+      </div>
+
+
+      <div class="inmodal">
+        <label >Автор маршрута </label><label class="invalid_input" [hidden]="!myForm.controls['longTrip'].value">*</label>
+        <input type="text" class="inputstyle" formControlName="routeAuthor" >
+      </div>
+
+
+      <div class="inmodal">
+        <label class="control-label">Тип исполнителя</label><label class="invalid_input" [hidden]="!myForm.controls['longTrip'].value">*</label>
+          <select formControlName="profile" class="inputstyle">
+            <option></option>
+            <option>Механик</option>
+            <option>Строитель</option>
+            <option>Маляр</option>
+            <option>Художник</option>
+
+            <!--<option *ngFor="let prf of allProfiles" [ngValue]="prf">
+              {{ prf.prName }}
+            </option>-->
+
+          </select>
+      </div>
+
+
+      <div class="inmodal" style="display: inline-block; width: 100%; margin-top: 10px" >
+        <div style="display: inline-block; width: 30%">
+          <label>Дни обходов</label><label class="invalid_input" [hidden]="!myForm.controls['longTrip'].value">*</label></div>
+
+        <div class="form_radio_btn" style="display: inline-block">
+            <input type="radio" id="mon" value="mon" formControlName="week"><label for="mon">Пн</label>
+            <input type="radio" id="tue" value="tue" formControlName="week"><label for="tue">Вт</label>
+            <input type="radio" id="wed" value="wed" formControlName="week"><label for="wed">Ср</label>
+            <input type="radio" id="thu" value="thu" formControlName="week"><label for="thu">Чт</label>
+            <input type="radio" id="fri" value="fri" formControlName="week"><label for="fri">Пт</label>
+            <input type="radio" id="sat" value="sat" formControlName="week"><label for="sat">Сб</label>
+            <input type="radio" id="sun" value="sun" formControlName="week"><label for="sun">Вс</label>
+        </div>
+
+            <div style="display: inline-block; float: right;">
+              <input class="inmodal" type="checkbox" id="long" style="margin-right: 10px" formControlName="longTrip">
+              <label for="long" style="float: right;">Длительный обход</label>
+            </div>
+      </div>
+      <button style="display: block; margin-left: auto; margin-top: 0px  " [disabled]="this.myForm.invalid" (click)="saveForm()">Сохранить</button>
+    </form>
+  </div>
+</div>
