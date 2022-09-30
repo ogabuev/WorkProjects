@@ -1,0 +1,51 @@
+
+
+<div class="central_page" >
+
+  <div class="array_card">
+    <div class="oneCard" *ngFor="let prf of allMans" >
+      <p>Имя: {{ prf.name }}</p>
+      <p>Возраст: {{ prf.age }}</p>
+    </div>
+
+
+    <div class="oneCard">
+      <form [formGroup]="MansForm" (ngSubmit)="submit()">
+        <input type="text" class="input_style" placeholder="Имя" formControlName="ManName">
+        <input type="number" class="input_style" placeholder="Возраст" formControlName="ManAge">
+        <button [disabled]="this.MansForm.invalid" (click)="addNewMan()  ">Добавить</button>
+      </form>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="array_card">
+    <div class="oneCard" *ngFor="let prf of BatyaMans" >
+      <p>Имя: {{ prf.name }}</p>
+      <p>Возраст: {{ prf.age }}</p>
+      <p>Батя: {{ prf.batya }} </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="array_card">
+    <div class="oneCard" *ngFor="let prf of OldBatyaMans" >
+      <p>Имя: {{ prf.name }}</p>
+      <p>Возраст: {{ prf.age }}</p>
+      <p>Батя: {{ prf.batya }} </p>
+    </div>
+  </div>
+
+</div>
+ <!-- <ng-controller
+  <div class="oneCard" ng-repeat="man in allMans" >
+    <p>{{man.name}}</p>
+    <p>age</p>
+
+  </div>-->
+
+
+
+

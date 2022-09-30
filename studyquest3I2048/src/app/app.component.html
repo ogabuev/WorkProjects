@@ -1,0 +1,28 @@
+<div class="game_field" >
+
+  <div class="new_layout">
+
+    <div  class="one_block"
+          [style.background-color]="
+           val==2?    '#EEE4DA':
+           val==4?    '#EAE0C8':
+           val==8?    '#F59563':
+           val==16?   '#3399ff':
+           val==32?   '#ffa333':
+           val==64?   '#cef030':
+           val==128?  '#E8D8CE':
+           val==256?  '#990303':
+           val==512?  '#6BA5DE':
+           val==1024? '#DCAD60':
+           val==2048? '#B60022':
+           '#b4b4b4'"
+          *ngFor="let val of value_cell">
+      <div class="figure" [style.color]="val==0?'#b4b4b4':'#444242'">{{val}}</div>
+    </div>
+
+  </div>
+
+  <div class="gride_block" *ngFor="let cell of grid"></div>
+
+
+</div>

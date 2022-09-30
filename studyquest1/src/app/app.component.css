@@ -1,0 +1,53 @@
+* {
+  font-family: Arial;
+  font-size: 16px;
+}
+
+.central_page {
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.input_style {
+  width: 70%;
+  height: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  margin: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.array_card {
+  display: table-cell
+}
+
+.oneCard {
+  display: block;
+  float: left;
+  width: 150px;
+  height: 100px;
+  background: aliceblue;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+button {
+  border-radius: 5px;
+  border-width: 1px;
+  height: 20px;
+  margin: 10px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+form {
+  width: 150px;
+  height: 100px;
+}
+
+p {
+  margin: 10px
+}

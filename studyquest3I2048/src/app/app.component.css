@@ -1,0 +1,50 @@
+
+
+.game_field {
+  background-color: rgb(133, 119, 126);
+  border-radius: 10px;
+  height: 700px;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  display: block;
+  padding: 5px;
+}
+
+.gride_block {
+  display: inline-block;
+  background-color: #b4b4b4;
+  height: 165px;
+  width: 165px;
+  border-radius: 5px;
+  margin: 5px;
+  margin-bottom: 0px;
+
+}
+
+.new_layout {
+  position: absolute;
+  height: 700px;
+  width: 700px;
+}
+
+.one_block {
+  display: inline-block;
+  background-color: #b4b4b4;
+  height: 165px;
+  width: 165px;
+  border-radius: 5px;
+  margin: 5px;
+  margin-bottom: 4px;
+}
+
+.figure {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #444242;
+  font-size: 65px;
+  font-family: Arial;
+  font-weight: bold;
+}
