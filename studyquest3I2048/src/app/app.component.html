@@ -1,8 +1,20 @@
+
+<div class="controll_panel">
+  <button (click)="startGenereation()" class="controll">Новая игра</button>
+</div>
+
 <div class="game_field" >
 
   <div class="new_layout">
+    <div *ngIf="endGame"
+         [@blockTrip]
+         class="end_game">
+      <p style="margin-top: 200px">Конец игры</p>
+    </div>
 
-    <div  class="one_block"
+    <div  *ngFor="let val of value_cell"
+          class="one_block"
+
           [style.background-color]="
            val==2?    '#EEE4DA':
            val==4?    '#EAE0C8':
@@ -15,14 +27,15 @@
            val==512?  '#6BA5DE':
            val==1024? '#DCAD60':
            val==2048? '#B60022':
-           '#b4b4b4'"
-          *ngFor="let val of value_cell">
+           '#b4b4b4'">
       <div class="figure" [style.color]="val==0?'#b4b4b4':'#444242'">{{val}}</div>
     </div>
 
   </div>
 
-  <div class="gride_block" *ngFor="let cell of grid"></div>
+  <div *ngFor="let cell of grid" class="gride_block"></div>
 
 
 </div>
+<!--*ngIf="endGame"-->
+

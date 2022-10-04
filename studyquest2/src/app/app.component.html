@@ -1,0 +1,46 @@
+
+<div >
+  <div
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="drop($event)"
+    class="central_page">
+
+
+    <div cdkDropListGroup class="central_page">
+      <div id="array_card"  class="array_card" *ngFor="let card of allCards; let i = index;" cdkDrag>
+        <button class="close_cards_btn" style="height: 13px" (click)="delCards(i)"></button>
+        <p>{{ card.list_title }}</p>
+        <div
+          cdkDropList
+          [cdkDropListData]="allCards[i].card_array"
+          (cdkDropListDropped)="drop2($event)"
+          >
+          <div
+            *ngFor="let prf of allCards[i].card_array; let j = index;"
+            cdkDrag>
+            <div [ngClass]="prf.name!==''? 'oneCard':'hhidden_card'" >
+              <button [ngClass]="prf.name!==''? 'close_cards_btn':'hhidden_card'"  (click)="delCard(i,j)"></button>
+              <textarea (keyup)="textAreaAdjust($event)" [ngClass]="prf.name!==''? 'less':'hhidden_card'"  (focus)="edit($event)" (blur)="edit($event)" >{{ prf.name }}</textarea>
+            </div>
+          </div>
+        </div>
+        <button class="add_new_button" (click)="showDialog(i)">Добавить</button>
+      </div>
+    </div>
+
+
+    <div  class="array_card" >
+      <input   type="text" placeholder="Название списка" [(ngModel)]="list_title">
+      <button class="add_new_button" (click)="addNewCards()">Добавить</button>
+    </div>
+  </div>
+</div>
+
+
+<app-modal id="modal_1" class="hhidden">
+  <p>Новая задача</p>
+  <textarea type="text"  [(ngModel)]="task_text"> </textarea>
+  <button (click)="addNewCard()" class="add_new_button">Добавить</button>
+</app-modal>
+

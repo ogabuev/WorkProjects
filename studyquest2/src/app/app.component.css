@@ -1,0 +1,111 @@
+* {
+  font-family: Arial;
+  font-size: 16px;
+}
+
+.central_page {
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  float: top;
+  display: inline-flex;
+}
+
+.input_style {
+  width: 70%;
+  height: 20px;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.array_card {
+  margin: 3px;
+  padding: 5px;
+  width: 250px;
+  background: #85777e;
+  float: left;
+  border-radius: 4px;
+  height: min-content;
+}
+
+.oneCard {
+  word-wrap: break-word;
+  display: block;
+  float: top;
+  width: 250px;
+  height: min-content;
+  background: #f1e7e7;
+  margin: 0px;
+  margin-bottom: 3px;
+  padding: 0.1px;
+  border-radius: 3px;
+}
+.hhidden_card {
+  height: 1px;
+  margin: 0px;
+  background:none;
+  border: none;
+}
+
+.add_new_button {
+  border-radius: 5px;
+  border-width: 1px;
+  height: 30px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+}
+
+.sshow {
+  display: block;
+}
+
+.hhidden {
+  display: none;
+}
+
+.less {
+  height: min-content;
+  overflow-y: hidden;
+}
+
+.close_cards_btn {
+  height: 10px ;
+  width: 10px;
+  position: absolute;
+  z-index: 900;
+  margin-left: 235px;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+textarea {
+  height: 300px;
+  width: 98%;
+  border-radius: 3px;
+  resize: none;
+}
+
+input {
+  margin-top: 10px;
+  width: 98%;
+  border-radius: 5px;
+  border-width: 1px;
+  height: 26px;
+}
+
+form {
+  width: 150px;
+  height: 100px;
+}
+
+p {
+  margin: 10px
+}
+
