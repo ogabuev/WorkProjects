@@ -9,12 +9,18 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {MatRippleModule} from "@angular/material/core";
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    CommonModule,
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     MatTableModule,
@@ -22,9 +28,12 @@ import {MatInputModule} from "@angular/material/input";
     MatButtonToggleModule,
     MatButtonModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

@@ -1,41 +1,87 @@
 <div>
-  <mat-table  [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> item </mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.position}}</mat-cell>
-      <mat-footer-cell *matFooterCellDef>
-        <i><mat-icon> add</mat-icon></i>
-      </mat-footer-cell>
-    </ng-container>
+  <mat-table  [dataSource]="PeriodicElements.atoms" multiTemplateDataRows class="mat-elevation-z8" >
 
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"><input matInput value="{{element.name}}"> {{element.name}} </mat-cell>
-      <mat-footer-cell *matFooterCellDef>
-      </mat-footer-cell>
-    </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-      <mat-footer-cell *matFooterCellDef>
-      </mat-footer-cell>
-    </ng-container>
 
-    <ng-container matColumnDef="button">
-      <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
-      <mat-cell *matCellDef>
-        <i><mat-icon> settings</mat-icon></i>
+
+
+    <ng-container [matColumnDef]="name" *ngFor="let name of displayedColumns">
+
+
+      <mat-header-cell  *matHeaderCellDef> {{name}} </mat-header-cell>
+
+      <mat-cell *matCellDef="let element">
+        <div *ngIf="!isEdit || element.position !== elementRow  || (name == displayedColumns[displayedColumns.length-1]) || (name == displayedColumns[0])">
+          {{element[name]}}
+        </div>
+
+          <div *ngIf="isEdit && element.position == elementRow && (name !== displayedColumns[displayedColumns.length-1]) && (name !== displayedColumns[0]) ">
+            <mat-form-field style="width: 60%">
+              <mat-label></mat-label>
+              <input matInput (click)="$event.stopPropagation()"  value='{{element[name]}}' [(ngModel)]="element[name]"/>
+            </mat-form-field>
+          </div>
+
+        <i *ngIf="name == displayedColumns[displayedColumns.length-1] && (!isEdit || element.position !== elementRow)" >
+          <button mat-icon-button
+                  [disabled]="isEdit || !(name == displayedColumns[displayedColumns.length-1] && (!isEdit || element.position !== elementRow))"
+                  (click)="editRow(element.position)">
+            <mat-icon > create</mat-icon>
+          </button>
+        </i>
+        <i style="position: absolute; z-index: 1000" *ngIf="name == displayedColumns[displayedColumns.length-1] && isEdit && element.position == elementRow" >
+          <button mat-icon-button (click)="saveEdit(element.position);$event.stopPropagation()">
+            <mat-icon> done</mat-icon>
+          </button>
+        </i>
       </mat-cell>
-      <mat-footer-cell *matFooterCellDef>
 
+
+      <mat-footer-cell *matFooterCellDef>
+        <i>
+          <button [disabled]="isEdit" style="margin-left: -11px" mat-icon-button (click)="newAtom()">
+            <mat-icon *ngIf="name==displayedColumns[0]"> add</mat-icon>
+          </button>
+        </i>
       </mat-footer-cell>
+
     </ng-container>
+
+
+
+
+
+    <ng-container  matColumnDef="expandedDetail">
+      <td mat-cell style="border-bottom: 0px" *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+        <div class="example-element-detail"
+             [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <div class="example-element-diagram">
+            <div > {{element.position}} </div>
+            <div > {{element.symbol}} </div>
+            <div > {{element.name}} </div>
+            <div > {{element.weight}} </div>
+          </div>
+          <div class="example-element-description">
+
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+
+
 
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-row *matRowDef="let element; columns: displayedColumns;"
+        class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element"
+        (click)="expandedElement = expandedElement === element ? null : !isEdit ? element : null">
+    </mat-row>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+
+    <!--    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+<!--&lt;!&ndash;    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>&ndash;&gt;-->
     <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
   </mat-table>
 
