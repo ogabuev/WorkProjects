@@ -1,0 +1,25 @@
+.nickname-menu {
+  height: 50px;
+  width: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.nickname-story-btn {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid red;
+}
+
+.nickname-text-menu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.second-text {
+  margin-top: -3px;
+  font-size: 9pt;
+}
