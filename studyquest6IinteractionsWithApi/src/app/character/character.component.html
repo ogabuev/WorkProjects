@@ -1,0 +1,41 @@
+<h1 mat-dialog-title> </h1>
+<div mat-dialog-content>
+
+  <mat-card class="character-card">
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image src="{{this.data.image}}" alt="Photo of a Shiba Inu">
+
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Info</mat-label>
+    <input matInput >
+    <mat-label>Info</mat-label>
+    <input matInput >
+    <mat-label>Info</mat-label>
+    <input matInput >
+    <mat-label>Info</mat-label>
+    <input matInput >
+    <mat-label>Info</mat-label>
+    <input matInput >
+  </mat-form-field>
+
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button>Обновить</button>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button  cdkFocusInitial>Ok</button>
+</div>

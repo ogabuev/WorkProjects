@@ -1,0 +1,18 @@
+.character-card {
+  min-width: 250px;
+  max-width: 300px;
+  margin-left: 10px;
+  margin-top: 15px;
+  display: block;
+  cursor: pointer;
+
+}
+
+.array-character-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mat-body {
+  background-color: darkgrey;
+}
